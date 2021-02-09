@@ -28,6 +28,10 @@ condicions:
 condicionals:
 	if [ condició ]
 	then
-	    xxxxx (2 o 4 espais indentat, no mes)
-	    xxxx
+	    ...accions... (2 o 4 espais indentat, no mesa)
+	elif [ condició ]
+	then
+	    ...accions...
+	else
+	    ...accions...
 	fi
