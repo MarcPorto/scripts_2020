@@ -1,8 +1,8 @@
 # !/bin/bash
 # @edt ASIX M01-ISO
 # Febrer 2021
-# llistar el direcotri si existeix
-#  $ prog dir
+# llistar el direcotri si existeix + manual d'ajuda -h
+#  $ prog arg (dir o -h)
 # -------------------------------------
 ERR_NARGS=1
 ERR_NODIR=2
@@ -15,8 +15,16 @@ then
     exit $ERR_NARGS
 fi
 
-# validar si es directori
 directori=$1
+# Validar si l'argument es -h
+if [ $directori = "-h" ]
+then
+    echo "Manual / Ajuda"
+    echo "Usage: $0 direcotiri"
+    exit 0
+fi
+
+# validar si es directori
 if ! [ -d $directori ]
 then
     echo "Error: $directori no es un directori"

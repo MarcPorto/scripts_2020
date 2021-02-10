@@ -1,3 +1,4 @@
+# Dubtes --> man test
 # 1r) Validem arguments
 	-error: missatge error
 		mostrar usage
