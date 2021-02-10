@@ -22,5 +22,5 @@ then
     exit $ERR_DIREX
 fi
 
-echo $directori
+ls $directori
 exit 0
