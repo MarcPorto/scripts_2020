@@ -18,6 +18,15 @@ fi
 
 directori=$1
 
+# Validem si exiteix el argument
+
+if [ ! -e $directori ]
+then
+    echo "Error: $directori no existeix"
+    echo "Usage: $0 arg (direcotri, link o regular file)"
+    exit $ERR_NOFILE
+fi
+
 if [ -d $directori ] # Validem si es un directori
 then
     echo "Es un directori"
@@ -28,9 +37,7 @@ elif [ -f $directori ] # Validem si es un regular file
 then
     echo "Es un regular file"
 else  # Si no es cap dels anteriors
-    echo "Error: No s'ha trobat el fitxer especificat"
-    echo "Usage: $0 arg (direcotri,link o regular file)"
-    exit $ERR_NOFILE
+    echo "No s'ha pogut identificar $directori"
 fi
 
 exit 0
