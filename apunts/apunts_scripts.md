@@ -40,4 +40,12 @@ condicionals:
 
 ##############################
 ########### case ############
+#######################
+
+
+####Errors######
+processant errors en un buvle:
+	a) errors irrecuperables --> msg error, plegar exit nº != 0
+	b) error recuperable --> msg error stderr, continuar  
+	probar progrma $ bash programa [args] 2> error.log
 
