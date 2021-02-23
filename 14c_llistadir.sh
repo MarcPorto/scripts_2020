@@ -18,7 +18,7 @@ fi
 
 dir=$1
 
-if ! [ -d $dir ]
+if [ ! -d $dir ]
 then
   echo "Error: No es un directori"
   echo "Usage: programa dir"
@@ -28,11 +28,17 @@ fi
 llista=$(ls $dir)
 for arg in $llista
 do
-  if ! [ -f $arg ]
+  if [ -d "$dir/$arg" ] # Validem si es un directori
   then
-    echo "$arg: Es un altre"
-  else
+    echo "$arg: Es un directori"
+  elif [ -h "$dir/$arg" ] # Validem si es un link
+  then
+    echo "$arg: Es un link"
+  elif [ -f "$dir/$arg" ] # Validem si es un regular file
+  then
     echo "$arg: Es un regular file"
+  else  # Si no es cap dels anteriors
+    echo "$arg: No s'ha pogut identificar $directori"
   fi
 done
 
