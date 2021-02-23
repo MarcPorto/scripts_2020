@@ -1,6 +1,0 @@
-# !/bin/bash
-# @edt ASIX M01-ISO
-# Febrer 2021
-# Fer un comptador des de zero fins al valor indicat per l’argument rebut.
-#  $ prog valor_max
-# -------------------------------------
