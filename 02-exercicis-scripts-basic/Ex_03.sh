@@ -14,13 +14,13 @@ then
   exit $ERR_NARGS
 fi
 
-min=0
-num=$1
+max=$1
+num=0
 
-while [ $num -ge $min ]
+while [ $num -le $max ]
 do
   echo "$num"
-  ((num--))
+  ((num++))
 done
 
 exit 0
