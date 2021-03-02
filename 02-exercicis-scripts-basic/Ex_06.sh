@@ -18,14 +18,17 @@ then
   exit $ERR_NARGS
 fi
 
+contador_lab=0
+contador_fest=0
+
 for i in $*
 do
   case $i in
     "dilluns"|"dimarts"|"dimecres"|"divendres"|"dissabte")
-      echo "$i es laboral"
+      ((contador_lab++))
       ;;
     "diumenge")
-      echo "$i Es festiu"
+      ((contador_fest++))
       ;;
     *)
       echo "Error: $i no s'ha pogut identificar com a dia vàlid" >> /dev/stderr
@@ -33,3 +36,5 @@ do
       ;;
   esac
 done
+
+echo "Hi ha $contador_fest dies festius, hi ha $contador_lab dies laborals"
