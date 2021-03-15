@@ -1,0 +1,45 @@
+# Administracio d'usuaris
+
+## Ordres
+  Crear: - useradd (crear usuari)
+         - passwd (activa el compte / permet sesio)
+	 
+         - per defecte crea usuaris egoistes, 
+           pertanyen a un propi grup ( no es desitjable)
+Cuan creas un usuari
+  
+  Eliminar: userdel -r (elimina l'usuari i els seus arxius)
+
+### Ordres varias
+
+chfn
+finger
+useradd -D --> Mostra els valors per defecte a l'hora de crear un usuari
+		cat /etc/default/useradd (conte els valors per defecte de useradd)
+## Archius
+
+/etc/passwd --> comptes d'usuari (man 5 passwd)
+		cada linea es un usuari
+		login:x:UID:GID:GECOS:homeDir:shell
+		pos2 = x, vol dir que el password esta guardad a /etc/shadow
+
+    /etc/shadow --> els passwords dels usuaris
+		    es descriu la politica de comptes
+		    password convertidas a HASH MD5
+			(el hash no es pot tornar a pasara a texte pla)
+		    user1:!!:18701:0:99999:7::: --> !! vol dir que no hi ha password
+
+/etc/group --> grups  (grup 100 --> usuaris general)
+		user1:x:1003:
+  /etc/gshadow --> els passwords dels grups (molt inusual)
+
+/etc/login.defs --> definicions de valors per defecte
+
+/etc/default/useradd --> Conte els valors de creacio d'usuari per defecte
+
+
+
+
+
+# Cambiar sempre
+/etc/selinux/config

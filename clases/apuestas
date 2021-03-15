@@ -1,0 +1,3 @@
+E = stdout = es vocal * 2 , error | stderr = lo mismo
+R = stdout = es vocal * 2, error | stderr = error
+J = stdout = es vocal * 2 | stderr = error 
