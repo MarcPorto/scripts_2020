@@ -20,6 +20,11 @@
 - ```# finger```
 - ```# useradd -D --> Mostra els valors per defecte a l'hora de crear un usuari```
   - ```cat /etc/default/useradd (conte els valors per defecte de useradd)```
+- ```# chsh```
+-```# usermod```
+
+**useradd**
+
 ## Archius
 ```
 /etc/passwd --> comptes d'usuari (man 5 passwd)
@@ -47,7 +52,7 @@
 ```
 
 
-
+```# "." --> Source```
 
 ## Cambiar sempre
 ```
