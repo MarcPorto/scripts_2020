@@ -21,9 +21,23 @@
 - ```# useradd -D --> Mostra els valors per defecte a l'hora de crear un usuari```
   - ```cat /etc/default/useradd (conte els valors per defecte de useradd)```
 - ```# chsh```
--```# usermod```
+- ```# usermod```
+- ```# chage```
 
+**useradd -D**
+```
+Ueradd -D
+    GROUP=100
+    HOME=/home
+    INACTIVE=-1
+    EXPIRE=
+    SHELL=/bin/bash
+    SKEL=/etc/skel
+    CREATE_MAIL_SPOOL=yes
+```
 **useradd**
+
+man 5 shadow
 
 ## Archius
 ```
@@ -51,8 +65,17 @@
 /etc/default/useradd --> Conte els valors de creacio d'usuari per defecte
 ```
 
+**Politica de password**
+- 
+- Cuant caduca el password
+- Longitud minima
+
+
+
 
 ```# "." --> Source```
+
+
 
 ## Cambiar sempre
 ```
