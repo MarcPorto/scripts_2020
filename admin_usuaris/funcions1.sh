@@ -1,6 +1,50 @@
 #! /bin/bash
 # isx39478173
 
+#23.getSize homeDir
+function getSize() {
+
+}
+
+#22.getHoleList login[...]
+function getHoleList(){
+  ERR_NARGS=1
+  ERR_NLOGIN=2
+  status=0
+  if [ $# -le 0 ];
+  then
+    echo "Error: nº args incorrecte"
+    echo "Usage: getHoleList login[...]"
+    return $ERR_NARGS
+  fi
+
+  for login in $*
+  do
+    grep "^$login:" /etc/passwd &> /dev/null
+    echo "grep"
+    if [ $? -ne 0 ];
+    then
+      echo "Error: El login $login no s'ha trobat"
+      status=$ERR_NLOGIN
+    else
+      getHome $login
+    fi
+  done
+  return $status
+}
+
+# 21.getHome login
+function getHome(){
+  login=$1
+  home=$(grep "^$login:" /etc/passwd | cut -d: -f6)
+  if [ -z {$home} ];
+  then
+    return 1
+  fi
+  echo $home
+  return 0
+}
+
 # crea escola
 function creaEscola(){
   #escola="a b c d"
